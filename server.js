@@ -3,8 +3,8 @@ const { ApolloServer } = require("apollo-server-express");
 const { sequelize } = require("./models");
 // const typeDefs = require("./graphql/schema");
 // const resolvers = require("./graphql/resolvers");
-const {typeDefs} = require("./graphql/typeDefs/index")
-const {resolvers} = require("./graphql/resolvers/index")
+const { typeDefs } = require("./graphql/typeDefs/index");
+const { resolvers } = require("./graphql/resolvers/index");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -21,7 +21,7 @@ async function startServer() {
   server.applyMiddleware({ app });
 
   app.listen(PORT, async () => {
-    console.log(`Server started on http://localhost:${PORT}/graphql`);
+    console.log(`🚀 Server started on http://localhost:${PORT}/graphql`);
     await sequelize.sync(); // Sync the Sequelize models with the database
   });
 }
